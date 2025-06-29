@@ -1,7 +1,7 @@
 'use client';
 
-import { useFormState, useFormStatus } from 'react-dom';
-import { useEffect, useState } from 'react';
+import { useFormStatus } from 'react-dom';
+import { useActionState, useEffect, useState } from 'react';
 import { getAIAdvice, getDocumentSummary } from './actions';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
@@ -26,7 +26,7 @@ function SubmitButton({ children }: { children: React.ReactNode }) {
 
 function AdviceForm() {
   const initialState = { advice: '', error: '' };
-  const [state, formAction] = useFormState(getAIAdvice, initialState);
+  const [state, formAction] = useActionState(getAIAdvice, initialState);
   const { toast } = useToast();
 
   useEffect(() => {
@@ -81,7 +81,7 @@ function AdviceForm() {
 
 function SummaryForm() {
   const initialState = { summary: '', suggestions: '', error: '' };
-  const [state, formAction] = useFormState(getDocumentSummary, initialState);
+  const [state, formAction] = useActionState(getDocumentSummary, initialState);
   const { toast } = useToast();
   const [fileName, setFileName] = useState('');
   const [fileDataUri, setFileDataUri] = useState('');
