@@ -63,7 +63,7 @@ export default function ContactPage() {
             </div>
             <div className="flex items-center gap-4">
               <Mail className="h-6 w-6 text-primary" />
-              <p className="text-foreground/80">contact@khalifamedical.com</p>
+              <p className="text-foreground/80">info@khalifamedicalhearingservices.com</p>
             </div>
           </div>
            <div>
