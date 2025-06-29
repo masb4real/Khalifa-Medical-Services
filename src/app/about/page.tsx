@@ -37,7 +37,7 @@ export default function AboutPage() {
         </div>
         <div className="order-1 md:order-2">
           <Image
-            src="https://placehold.co/600x400.png"
+            src="/img_3.jpg"
             alt="Clinic interior"
             data-ai-hint="clinic reception"
             width={600}
@@ -50,7 +50,7 @@ export default function AboutPage() {
       <div className="grid md:grid-cols-2 gap-12 items-center mb-16">
         <div>
            <Image
-            src="https://placehold.co/400x600.png"
+            src="/img_2.jpg"
             alt="Founder portrait"
             data-ai-hint="doctor smiling"
             width={400}

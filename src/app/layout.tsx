@@ -28,6 +28,7 @@ export default function RootLayout({
           rel="stylesheet"
         ></link>
       </head>
+      <link rel="icon" href="/favicon-16x16.png" sizes="16x16" />
       <body className="font-body antialiased">
         <div className="flex flex-col min-h-screen">
           <Navbar />

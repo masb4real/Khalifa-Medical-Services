@@ -38,10 +38,10 @@ export function Navbar() {
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container mx-auto flex h-16 items-center justify-between px-4">
         <Link href="/" className="flex items-center gap-2">
-          <Ear className="h-8 w-8 text-primary" />
+ <img src="/logo.png" alt="Khalifa Medical Logo" className="h-8 w-8" />
           <span className="text-xl font-bold text-primary">
-            Khalifa Medical
-          </span>
+            Khalifa Medical Services
+ Services</span>
         </Link>
         <nav className="hidden md:flex items-center gap-6">
           {navLinks.map((link) => (
@@ -59,8 +59,8 @@ export function Navbar() {
             <div className="flex h-full flex-col">
               <div className="flex items-center justify-between border-b pb-4">
                 <Link href="/" className="flex items-center gap-2" onClick={() => setIsOpen(false)}>
-                  <Ear className="h-6 w-6 text-primary" />
-                  <span className="font-bold text-primary">Khalifa Medical</span>
+ <img src="/logo.png" alt="Khalifa Medical Logo" className="h-6 w-6" />
+                  <span className="font-bold text-primary">Khalifa Medical Services</span>
                 </Link>
                 <Button variant="ghost" size="icon" onClick={() => setIsOpen(false)}>
                   <X className="h-6 w-6" />

@@ -13,7 +13,7 @@ export default function Home() {
             Your Partner in Hearing Health
           </h1>
           <p className="text-lg md:text-xl text-foreground/80 max-w-3xl mx-auto mb-8">
-            Khalifa Medical Services offers state-of-the-art hearing solutions and expert ENT care. Let us guide you on your journey to better hearing.
+            Khalifa Medical offers state-of-the-art hearing solutions and expert ENT care. Let us guide you on your journey to better hearing.
           </p>
           <div className="space-x-4">
             <Button asChild size="lg">
@@ -100,7 +100,7 @@ export default function Home() {
           </div>
           <div className="flex justify-center">
              <Image 
-                src="https://placehold.co/500x350.png" 
+                src="/img_4.jpg" 
                 alt="AI Advisor"
                 data-ai-hint="doctor laptop" 
                 width={500} 
