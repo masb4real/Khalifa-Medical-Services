@@ -1,17 +1,52 @@
+'use client';
+
+import { useFormState, useFormStatus } from 'react-dom';
+import { useEffect, useRef } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
-import { Phone, Mail, MapPin } from 'lucide-react';
-import { type Metadata } from 'next';
+import { Phone, Mail, MapPin, Loader2 } from 'lucide-react';
+import { useToast } from '@/hooks/use-toast';
+import { sendContactMessage, type FormState } from './actions';
 
-export const metadata: Metadata = {
-  title: 'Contact Us | Khalifa Medical Services',
-  description: 'Get in touch with Khalifa Medical Services. Find our address, phone number, and a contact form to send us a message.',
+const initialState: FormState = {
+  status: 'idle',
+  message: '',
 };
 
+function SubmitButton() {
+  const { pending } = useFormStatus();
+  return (
+    <Button type="submit" className="w-full" disabled={pending}>
+      {pending && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
+      Send Message
+    </Button>
+  );
+}
+
 export default function ContactPage() {
+  const [state, formAction] = useFormState(sendContactMessage, initialState);
+  const { toast } = useToast();
+  const formRef = useRef<HTMLFormElement>(null);
+
+  useEffect(() => {
+    if (state.status === 'success') {
+      toast({
+        title: 'Success!',
+        description: state.message,
+      });
+      formRef.current?.reset();
+    } else if (state.status === 'error' && state.message && !state.errors) {
+       toast({
+        variant: 'destructive',
+        title: 'Error',
+        description: state.message,
+      });
+    }
+  }, [state, toast]);
+
   return (
     <div className="container mx-auto px-4 py-16">
       <div className="text-center mb-12">
@@ -82,32 +117,35 @@ export default function ContactPage() {
             </CardDescription>
           </CardHeader>
           <CardContent>
-            <form className="space-y-4">
+            <form ref={formRef} action={formAction} className="space-y-4" noValidate>
               <div className="grid sm:grid-cols-2 gap-4">
                 <div className="space-y-2">
                   <Label htmlFor="first-name">First Name</Label>
-                  <Input id="first-name" placeholder="John" />
+                  <Input id="first-name" name="first-name" placeholder="John" required aria-invalid={!!state.errors?.firstName} />
+                  {state.errors?.firstName && <p className="text-sm font-medium text-destructive">{state.errors.firstName[0]}</p>}
                 </div>
                 <div className="space-y-2">
                   <Label htmlFor="last-name">Last Name</Label>
-                  <Input id="last-name" placeholder="Doe" />
+                  <Input id="last-name" name="last-name" placeholder="Doe" required aria-invalid={!!state.errors?.lastName} />
+                  {state.errors?.lastName && <p className="text-sm font-medium text-destructive">{state.errors.lastName[0]}</p>}
                 </div>
               </div>
               <div className="space-y-2">
                 <Label htmlFor="email">Email</Label>
-                <Input id="email" type="email" placeholder="john.doe@example.com" />
+                <Input id="email" name="email" type="email" placeholder="john.doe@example.com" required aria-invalid={!!state.errors?.email} />
+                {state.errors?.email && <p className="text-sm font-medium text-destructive">{state.errors.email[0]}</p>}
               </div>
               <div className="space-y-2">
                 <Label htmlFor="subject">Subject</Label>
-                <Input id="subject" placeholder="Question about services" />
+                <Input id="subject" name="subject" placeholder="Question about services" required aria-invalid={!!state.errors?.subject} />
+                {state.errors?.subject && <p className="text-sm font-medium text-destructive">{state.errors.subject[0]}</p>}
               </div>
               <div className="space-y-2">
                 <Label htmlFor="message">Message</Label>
-                <Textarea id="message" placeholder="Your message here..." rows={5} />
+                <Textarea id="message" name="message" placeholder="Your message here..." rows={5} required aria-invalid={!!state.errors?.message} />
+                {state.errors?.message && <p className="text-sm font-medium text-destructive">{state.errors.message[0]}</p>}
               </div>
-              <Button type="submit" className="w-full">
-                Send Message
-              </Button>
+              <SubmitButton />
             </form>
           </CardContent>
         </Card>

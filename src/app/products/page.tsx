@@ -12,37 +12,37 @@ const products = [
     name: 'SYNCHRONY 2 Cochlear Implant',
     description: 'The softest, most flexible electrode array for atraumatic insertion and complete cochlear coverage. Provides the closest to natural hearing.',
     image: 'https://placehold.co/600x400.png',
-    hint: 'medical device',
+    hint: 'cochlear implant',
   },
   {
     name: 'SONNET 2 Audio Processor',
     description: 'A lightweight and water-resistant audio processor with dual-microphone technology for better hearing in noisy environments.',
     image: 'https://placehold.co/600x400.png',
-    hint: 'hearing aid',
+    hint: 'audio processor',
   },
   {
     name: 'RONDO 3 Audio Processor',
     description: 'An all-in-one audio processor that is worn off the ear. Simple to use, wireless charging, and enhanced streaming capabilities.',
     image: 'https://placehold.co/600x400.png',
-    hint: 'audio processor',
+    hint: 'wireless audio processor',
   },
   {
     name: 'BONEBRIDGE Bone Conduction Implant',
     description: 'An active bone conduction implant for conductive or mixed hearing loss. The implant is placed completely under the skin.',
     image: 'https://placehold.co/600x400.png',
-    hint: 'implant technology',
+    hint: 'bone conduction implant',
   },
   {
     name: 'ADHEAR Bone Conduction System',
     description: 'A revolutionary non-surgical hearing system. The adhesive adapter is simply stuck on the skin behind the ear.',
     image: 'https://placehold.co/600x400.png',
-    hint: 'medical adhesive',
+    hint: 'hearing system',
   },
   {
     name: 'AudioLink',
     description: 'A versatile connectivity device that allows you to stream sound from your phone, tablet, and other devices directly to your audio processor.',
     image: 'https://placehold.co/600x400.png',
-    hint: 'connectivity device',
+    hint: 'audiolink device',
   },
 ];
 
