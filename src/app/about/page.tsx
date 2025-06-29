@@ -50,11 +50,11 @@ export default function AboutPage() {
       <div className="grid md:grid-cols-2 gap-12 items-center mb-16">
         <div>
            <Image
-            src="https://placehold.co/600x400.png"
+            src="https://placehold.co/400x600.png"
             alt="Founder portrait"
             data-ai-hint="doctor smiling"
-            width={600}
-            height={400}
+            width={400}
+            height={600}
             className="rounded-lg shadow-lg"
           />
         </div>
