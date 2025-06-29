@@ -63,8 +63,8 @@ export default function ProductsPage() {
               <Image
                 src={product.image}
                 alt={product.name}
-                layout="fill"
-                objectFit="cover"
+                fill
+                className="object-cover"
                 data-ai-hint={product.hint}
               />
             </div>
