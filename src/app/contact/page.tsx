@@ -24,15 +24,34 @@ export default function ContactPage() {
       <div className="grid md:grid-cols-2 gap-12">
         <div className="space-y-8">
           <div>
-            <h2 className="text-2xl font-bold text-primary mb-4">Our Location</h2>
-            <div className="flex items-start gap-4">
-              <div className="mt-1">
-                <MapPin className="h-6 w-6 text-primary" />
+            <h2 className="text-2xl font-bold text-primary mb-4">Our Locations</h2>
+            <div className="space-y-6">
+              <div className="flex items-start gap-4">
+                <div className="mt-1 flex-shrink-0">
+                  <MapPin className="h-6 w-6 text-primary" />
+                </div>
+                <div>
+                  <p className="font-semibold">Dialog Complex</p>
+                  <p className="text-foreground/80">No 61, Tafabalewa Road, Kaduna, Nigeria.</p>
+                </div>
               </div>
-              <div>
-                <p className="font-semibold">Khalifa Medical Services</p>
-                <p className="text-foreground/80">123 Health St, Medical City</p>
-                <p className="text-foreground/80">Capital City, 12345</p>
+              <div className="flex items-start gap-4">
+                <div className="mt-1 flex-shrink-0">
+                  <MapPin className="h-6 w-6 text-primary" />
+                </div>
+                <div>
+                  <p className="font-semibold">Jowako Specialist Hospital</p>
+                  <p className="text-foreground/80">ENT Unit, Jos Road, Kaduna, Nigeria.</p>
+                </div>
+              </div>
+              <div className="flex items-start gap-4">
+                <div className="mt-1 flex-shrink-0">
+                  <MapPin className="h-6 w-6 text-primary" />
+                </div>
+                <div>
+                  <p className="font-semibold">Wellness Center</p>
+                  <p className="text-foreground/80">ENT Unit, Murtala Square, Kaduna, Nigeria.</p>
+                </div>
               </div>
             </div>
           </div>
@@ -40,7 +59,7 @@ export default function ContactPage() {
             <h2 className="text-2xl font-bold text-primary mb-4">Contact Details</h2>
             <div className="flex items-center gap-4 mb-4">
               <Phone className="h-6 w-6 text-primary" />
-              <p className="text-foreground/80">(123) 456-7890</p>
+              <p className="text-foreground/80">08037030395</p>
             </div>
             <div className="flex items-center gap-4">
               <Mail className="h-6 w-6 text-primary" />
